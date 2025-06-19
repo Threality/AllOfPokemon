@@ -1,0 +1,13 @@
+class GameEvent:
+    ON_SWITCH_IN = "onSwitchIn"
+    BEFORE_TURN = "beforeTurn"
+    ON_MOVE_USE = "onMoveUse"
+    ON_MOVE_HIT = "onMoveHit"
+    ON_DAMAGE = "onDamage"
+    ON_KO = "onKO"
+    END_TURN = "endTurn"
+    TERRAIN_CHANGE = "terrainChange"
+    WEATHER_CHANGE = "weatherChange"
+    STATUS_GAINED = "statusGained"
+    ON_STAT_CALC = "onStatCalc"
+    ON_MEGA_EVOLVE = "onMegaEvolve"
