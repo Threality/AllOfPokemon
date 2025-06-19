@@ -1,72 +1,22 @@
-import json
-import Pokemon
-from Data import Items
+import TeamCreater
 
+class Player:
+    def __init__(self, name):
+        self._name = name
+        self._team = []
 
-
-
-
-def GetSubclasses(cls):
-    return cls.__subclasses__()
-
-
-
-
-
-def CreateTeams(POKEDEX):
-    print("Here is a list of all available pokemon:")
-    for dexNum, mon in POKEDEX.items():
-        print(f'{dexNum}) {mon["name"]}')
-    pokemonChoice = str(input(f'Pick a pokemon (num): '))
-    pokemonChoice = POKEDEX[str(pokemonChoice)]
-
-    if True: # filter for level editing
-        level = int(input("Level: "))
-
-    print("Here is a list of all available abilities:")
-    availableAbilities = pokemonChoice["abilities"]
-    if True: # can be replaced by filters later
-        for hiddenAbility in pokemonChoice["hiddenAbilities"]:
-            availableAbilities.append(hiddenAbility)
-    i = 0
-    for ability in availableAbilities:
-        print(f'{i}) {ability}')
-        i += 1
-    abilityChoice = int(input(f'Pick an ability (num): '))
-    abilityChoice = availableAbilities[int(abilityChoice)]
+    def GetName(self):
+        return self._name
     
-    moves = []
-    print("Here is a list of all available moves:")
-    availableMoves = pokemonChoice["levelMoves"]
-    if True: # can be replaced by filters later
-        for TMMove in pokemonChoice["TMMoves"]:
-            availableMoves.append(TMMove)
-    for j in range(0, 4):
-        i = 0
-        for move in availableMoves:
-            print(f'{i}) {move}')
-            i += 1
-        moveChoice = int(input(f'Pick a move (num): '))
-        moves.append(availableMoves[moveChoice])
-        availableMoves.pop(moveChoice)
-
-    with open("Data/Items.json","r") as f:
-        Items = json.load(f)
-    for itemNum, item in Items.items():
-        print(f'{itemNum}) {item["name"]}')
-    itemChoice = int(input(f'Pick an item (num): '))
-    itemChoice = Items[str(itemChoice)]["name"]
-
-    pokemon1 = Pokemon.CreatePokemon(pokemonChoice, level, abilityChoice, itemChoice, moves)
-    print(pokemon1)
-        
-
-
+    def SetTeam(self, mon, **EXArgs): #add support for varied size teams
+        self._team = mon
+    
+    def __str__(self):
+        print(f"{self._name}'s team is {self._team}")
 
 def Main():
-    with open("Data/Pokedex.json","r") as f:
-        POKEDEX = json.load(f)
-
+    player1 = Player(str(input("First player's name: ")))
+    player2 = Player(str(input("Second player's name: ")))
     while True:
         choice = str(input('What would you like to do?\n1) Battle\n2) Swap Teams\n3) Create Teams\nChoice (num): '))
         match choice:
@@ -75,8 +25,11 @@ def Main():
             case "2":
                 print("Swapping teams")
             case "3":
-                print("Creating teams")
-                CreateTeams(POKEDEX)
+                print(f"Creating {player1.GetName()}'s team")
+                player1.SetTeam(TeamCreater.CreateTeams())
+                print(f"Creating {player2.GetName()}'s team")
+                player2.SetTeam(TeamCreater.CreateTeams())
+                
             case _:
                 print("Please pick a valid option")
 
