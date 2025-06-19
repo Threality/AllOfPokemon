@@ -1,0 +1,39 @@
+{
+    "448": {
+        "name": "Lucario",
+
+        "baseStats": [70, 110, 115, 70, 70, 90],
+
+        "types": ["Fighting", "Steel"],
+
+        "abilities": ["InnerFocus", "Steadfast"],
+
+        "hiddenAbilities": ["Justified"],
+
+        "levelMoves": [
+    "Copycat", "Detect", "Feint", "Final Gambit", "Helping Hand", "Life Dew",
+    "Metal Claw", "Quick Attack", "Reversal", "Rock Smash", "Screech", "Vacuum Wave",
+    "Counter", "Work Up", "Force Palm", "Calm Mind", "Metal Sound", "Quick Guard",
+    "Bone Rush", "Swords Dance", "Heal Pulse", "Meteor Mash", "Dragon Pulse",
+    "Extreme Speed", "Close Combat"],
+
+        "TMMoves": [
+                "Take Down", "Agility", "Scary Face", "Protect", "Water Pulse", "Low Kick",
+    "Trailblaze", "Facade", "Aerial Ace", "Bulldoze", "Metal Claw", "Swift",
+    "Rock Tomb", "Low Sweep", "Fling", "Endure", "Sunny Day", "Rain Dance",
+    "Dig", "Brick Break", "Zen Headbutt", "Shadow Claw", "Bulk Up",
+    "Body Slam", "Thunder Punch", "Ice Punch", "Sleep Talk", "Drain Punch",
+    "Metronome", "Poison Jab", "Rest", "Rock Slide", "Swords Dance",
+    "Flash Cannon", "Dark Pulse", "Substitute", "Iron Defense", "Crunch",
+    "Aura Sphere", "Shadow Ball", "Dragon Pulse", "Psychic", "Calm Mind",
+    "Helping Hand", "Reversal", "Nasty Plot", "Earthquake", "Stone Edge",
+    "Giga Impact", "Focus Blast", "Hyper Beam", "Close Combat", "Steel Beam",
+    "Tera Blast", "Roar", "Vacuum Wave", "Focus Punch", "Psych Up",
+    "Coaching", "Metal Sound", "Upper Hand"],
+
+        "evoMoves": ["Aura Sphere"],
+
+        "eggMoves": ["Bite", "Bullet Punch", "Circle Throw", "Cross Chop", "Detect", "High Jump Kick", "Howl"]
+
+    }
+}
